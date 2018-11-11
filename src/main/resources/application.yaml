@@ -1,9 +1,9 @@
 server:
   port: 8761
-
+  ip: 127.0.0.1
 spring:
   application:
-    name: eureka-server
+    name: nasi-eureka-server
   security:
     user:
       name:
@@ -11,12 +11,14 @@ spring:
 
 eureka:
   instance:
-    hostname: localhost
+    ip-address: ${server.ip}
+    prefer-ip-address: true
+    instance-id: ${server.ip}:${spring.application.name}:${server.port}
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${server.ip}:${server.port}/eureka/
 
 management:
   endpoints:
