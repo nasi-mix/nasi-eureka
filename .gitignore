@@ -11,7 +11,7 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-
+src/main/resources/application.yaml
 # Sensitive or high-churn files
 .idea/**/dataSources/
 .idea/**/dataSources.ids
