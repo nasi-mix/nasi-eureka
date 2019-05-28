@@ -1,0 +1,28 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: nasi-eureka-server
+  security:
+    user:
+      name:
+      password:
+
+eureka:
+  instance:
+    hostname: .qfdk.me
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://user:@xxx.qfdk.me:8761/eureka
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 4000
+management:
+  endpoints:
+    web.exposure.include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
