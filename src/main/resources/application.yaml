@@ -12,8 +12,9 @@ spring:
 eureka:
   instance:
     ip-address: ${server.ip}
-    prefer-ip-address: true
+    prefer-ip-address: false
     instance-id: ${server.ip}:${spring.application.name}:${server.port}
+    hostname:
   client:
     registerWithEureka: false
     fetchRegistry: false
